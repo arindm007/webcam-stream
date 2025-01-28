@@ -1,14 +1,12 @@
+
+# Exported from Render on 2025-01-28T11:03:21Z
 services:
-  - type: web
-    name: video-streaming-server
-    env: python
-    region: singapore # Change to the desired region
-    buildCommand: pip install -r requirements.txt
-    startCommand: python server.py
-    runtime: python3.7 # Use a valid runtime, such as python3.7, python3.8, etc.
-    disk:
-      name: video-data
-      sizeGB: 1 # Adjust size if needed
-      mountPath: /var/lib/video-data # Mount disk path
-    healthCheckPath: "/"
-    autoDeploy: true
+- type: web
+  name: webcam-stream
+  runtime: python
+  repo: https://github.com/arindm007/webcam-stream
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: python server.py
+version: "1"
