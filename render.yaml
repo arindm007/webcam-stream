@@ -2,11 +2,13 @@ services:
   - type: web
     name: video-streaming-server
     env: python
-    region: singapore # Or choose another Render region (e.g., "oregon")
+    region: singapore # Change to the desired region
     buildCommand: pip install -r requirements.txt
     startCommand: python server.py
-    runtime: python3
+    runtime: python3.7 # Use a valid runtime, such as python3.7, python3.8, etc.
     disk:
-      sizeGB: 1 # Optional: Specify disk space for the app
+      name: video-data
+      sizeGB: 1 # Adjust size if needed
+      mountPath: /var/lib/video-data # Mount disk path
     healthCheckPath: "/"
     autoDeploy: true
