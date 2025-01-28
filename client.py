@@ -7,7 +7,7 @@ import datetime
 SERVER_URL = 'http://127.0.0.1:8080/video_feed'
 
 # Initialize the webcam
-camera = cv2.VideoCapture(1)
+camera = cv2.VideoCapture(0)
 
 # Set the desired webcam resolution
 camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
