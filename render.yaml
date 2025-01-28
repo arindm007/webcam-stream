@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: video-streaming-server
+    env: python
+    region: singapore # Or choose another Render region (e.g., "oregon")
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    runtime: python3
+    disk:
+      sizeGB: 1 # Optional: Specify disk space for the app
+    healthCheckPath: "/"
+    autoDeploy: true
