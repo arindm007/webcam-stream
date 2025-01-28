@@ -4,7 +4,7 @@ import time
 import datetime
 
 # Define the server URL
-SERVER_URL = 'http://127.0.0.1:8080/video_feed'
+SERVER_URL = 'https://webcam-stream-hczm.onrender.com/video_feed'
 
 # Initialize the webcam
 camera = cv2.VideoCapture(0)
